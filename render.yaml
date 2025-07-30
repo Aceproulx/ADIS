@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: adis-frontend
+    region: singapore # Choose the region closest to your users
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VITE_API_URL
+        value: https://www.chaintechhub.com/ADIS/backend/api   
+    autoDeploy: true
